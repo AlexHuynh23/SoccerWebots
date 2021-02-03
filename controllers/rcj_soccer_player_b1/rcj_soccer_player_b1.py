@@ -32,6 +32,12 @@ class MyRobot(rcj_soccer_robot.RCJSoccerRobot):
 
         direction = utils.get_direction(pointAngle1)
         direction = utils.get_direction(pointAngle2)
+    def findGoalSlope(self, ball_pos):
+        ball_distanceY = 0-ball_pos['y']
+        ball_distanceX = 0.75-ball_pos['x']
+        ball_slope = ball_distanceY/ball_distanceX
+
+        return ball_slope
 
 
 
