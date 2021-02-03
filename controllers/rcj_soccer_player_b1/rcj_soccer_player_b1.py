@@ -23,6 +23,16 @@ class MyRobot(rcj_soccer_robot.RCJSoccerRobot):
             right_speed = 5
 
         return left_speed, right_speed
+    def goToPosition(self, robot_pos, point):
+        point1 = {x:robot_pos["x"],y:point["y"]}
+        point2 = {x:point["x"],y:robot_pos["y"]}
+
+        pointAngle1, robot_angle = self.get_angles(point1, robot_pos)
+        pointAngle2, robot_angle = self.get_angles(point2, robot_pos)
+
+        direction = utils.get_direction(pointAngle1)
+        direction = utils.get_direction(pointAngle2)
+
 
 
 
